@@ -244,21 +244,6 @@ void parseJSON(){
 
 }
 
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(115200);
-  tft_init();
-  delay(4000);
-  WiFi.begin(ssid, password);
-  while(WiFi.status() != WL_CONNECTED){
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
-
-  Serial.println("Connected to the WiFi Network");
-  
-}
-
 void dataToFloats(){
   cputemp = floatValue(CPUPackage_Temp);
   for(int i = 0; i < 9; i++){
@@ -281,6 +266,21 @@ void dataToFloats(){
   gpuplot[9] = gputemp/2;
   Serial.print("GPU TEMP = ");
   Serial.println(gputemp, 1);
+}
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  tft_init();
+  delay(4000);
+  WiFi.begin(ssid, password);
+  while(WiFi.status() != WL_CONNECTED){
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+
+  Serial.println("Connected to the WiFi Network");
+  
 }
 
 void loop() {
