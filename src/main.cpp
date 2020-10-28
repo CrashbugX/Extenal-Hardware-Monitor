@@ -9,8 +9,8 @@
 #define x_limit 239
 #define y_limit 134
 
-const char* ssid = "Souler";
-const char* password = "familiaceballos";
+const char* ssid = "YOUR_SSID";
+const char* password = "PASSWORD";
 
 String payload = "{}";
 
